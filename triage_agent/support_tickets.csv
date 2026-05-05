@@ -1,0 +1,5 @@
+ticket_id,query
+1,My payment failed
+2,I forgot my password
+3,There is fraud on my card
+4,API error occurred
