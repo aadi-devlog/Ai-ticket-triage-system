@@ -10,7 +10,7 @@ It was developed as part of a HackerRank Hackathon project.
 
 * Classifies support tickets into categories like billing, account, technical, etc
 * Detects high priority issues (fraud, hacked account, urgent cases)
-* Retrieves responses from a knowledge base (corpus)
+* Retrieves responses from a knowledge base (corpus) using keyword-based matching
 * Avoids hallucination by not generating random answers
 * Simple pipeline and easy to understand
 
@@ -20,11 +20,11 @@ It was developed as part of a HackerRank Hackathon project.
 
 This system follows a deterministic pipeline:
 
-User Query → Classification → Risk Detection → Retrieval → Response
+**User Query → Classification → Risk Detection → Retrieval → Response**
 
-Technologies/logic used:
+Technologies / logic used:
 
-* TF-IDF style retrieval (basic implementation)
+* Keyword-based retrieval
 * Rule-based classification
 * Keyword based risk detection
 
@@ -34,7 +34,7 @@ The main idea was to keep the system reliable and explainable rather than fully 
 
 ## 📁 Project Structure
 
-```bash id="3x0j1n"
+```bash id="2x0hyk"
 ai-support-triage-system/
 │
 ├── main.py
@@ -52,21 +52,21 @@ ai-support-triage-system/
 
 ## ⚙️ How to Run
 
-1. Install dependencies (if needed):
+Install dependencies (if needed):
 
-```bash id="4l1m3x"
+```bash id="y27z4s"
 pip install scikit-learn
 ```
 
-2. Run the main file:
+Run the main file:
 
-```bash id="y9k2qp"
+```bash id="9q8u1r"
 python main.py
 ```
 
-3. Output will be generated in:
+Output will be generated in:
 
-```bash id="p2v7sd"
+```bash id="t8m2kq"
 output.csv
 ```
 
@@ -90,14 +90,14 @@ output.csv
 
 ---
 
-## ⚠️ Mistakes Occured During Development
+## ⚠️ Mistakes Occurred During Development
 
 * Initially used random selection in retriever which made responses inconsistent
-* Product area detection was not accurate (e.g. payment queries going to wrong category)
-* Forgot to include ticket_id in output which made tracking difficult
+* Product area detection was not accurate (e.g., payment queries going to wrong category)
+* Forgot to include `ticket_id` in output which made tracking difficult
 * Corpus was too small at beginning (only one line)
 * Used template-based response generation which was not fully grounded
-* File naming issues (like agent(3).py etc) caused import errors while running
+* File naming issues (like `agent(3).py`) caused import errors while running
 
 These issues were later identified and improved step by step.
 
